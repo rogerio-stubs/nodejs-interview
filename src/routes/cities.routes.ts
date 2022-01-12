@@ -10,7 +10,7 @@ const findByNameCityController = new FindByNameCityController();
 const findByUfCityController = new FindByUfCityController();
 
 citiesRoutes.post("/", createCityController.handle);
-citiesRoutes.get("/name/:name?", findByNameCityController.handle);
-citiesRoutes.get("/uf/:uf?", findByUfCityController.handle);
+citiesRoutes.get("/name/", findByNameCityController.handle);
+citiesRoutes.get("/uf/", findByUfCityController.handle);
 
 export { citiesRoutes };

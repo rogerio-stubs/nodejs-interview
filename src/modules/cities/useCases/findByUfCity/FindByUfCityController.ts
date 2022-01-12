@@ -4,7 +4,7 @@ import { FindByUfCityUseCase } from "./FindByUfCityUseCase";
 
 class FindByUfCityController {
     async handle(request: Request, response: Response) {
-        const { uf } = request.params;
+        const { uf } = request.body;
 
         const findByUfCityUseCase = container.resolve(FindByUfCityUseCase);
 
