@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { validate } from "uuid";
 import { AppError } from "../../../../errors/AppError";
+import { IUpdateCustomerDTO } from "../../dtos/IUpdateCustomerDTO";
 import { Customer } from "../../entities/Customer";
 import { ICustomersRepository } from "../../repositories/ICustomersRepository";
 
@@ -11,7 +12,7 @@ class UpdateByIdCustomersUseCase {
         private customersRepository: ICustomersRepository
     ) {}
 
-    async execute(fullName: string, id: string): Promise<Customer> {
+    async execute({fullName, id}: IUpdateCustomerDTO): Promise<Customer> {
         
         if(!id) {
             throw new AppError("ID nao pode ser vazio");
