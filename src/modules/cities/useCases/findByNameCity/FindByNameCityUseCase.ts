@@ -17,7 +17,7 @@ class FindByNameCityUseCase {
     async execute({ name }: IRequest): Promise<City[]> {
         
         if(!name) {
-            throw new AppError("Necessário informar o nome!")
+            throw new AppError("Necessário informar o nome!");
         }
 
         const cities = await this.citiesRepository.findByName(name.toLowerCase());

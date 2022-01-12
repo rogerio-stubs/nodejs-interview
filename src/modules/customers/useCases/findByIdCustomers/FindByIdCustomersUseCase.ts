@@ -15,12 +15,12 @@ class FindByIdCustomersUseCase {
     async execute(id: string): Promise<Customer> {
         
         if(!id) {
-            throw new AppError("Informe um id")
+            throw new AppError("É necessário informar um ID como parâmetro!");
         }
 
         
         if(!validate(id)) {
-            throw new AppError("ID inválido!");
+            throw new AppError("O ID informado é inválido!");
         }
 
         const customers = await this.customersRepository.findById(id);

@@ -17,7 +17,7 @@ class CreateCityUseCase {
         });
         
         if(cityAlreadyExists) {
-            throw new AppError("Cidade já cadastrada");
+            throw new AppError("Essa cidade já foi cadastrada");
         }
 
         await this.citiesRepository.create({

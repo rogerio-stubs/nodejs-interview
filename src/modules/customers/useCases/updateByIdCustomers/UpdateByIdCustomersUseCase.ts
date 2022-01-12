@@ -15,20 +15,20 @@ class UpdateByIdCustomersUseCase {
     async execute({fullName, id}: IUpdateCustomerDTO): Promise<Customer> {
         
         if(!id) {
-            throw new AppError("ID nao pode ser vazio");
+            throw new AppError("É necessário informar um ID como parâmetro!");
         }
         
         if(!fullName) {
-            throw new AppError("É necessário informar um nome");
+            throw new AppError("É necessário informar um novo nome para alteração!");
         }
 
         if(!validate(id)) {
-            throw new AppError("Id nao é valido");
+            throw new AppError("O ID informado é inválido");
         }
 
         const customerAlreadyExists = await this.customersRepository.findById(id);
         if(!customerAlreadyExists) {
-            throw new AppError("Id não foi encontrado!")
+            throw new AppError("O ID informado não foi encontrado!")
         }
 
         const customers = await this.customersRepository.updateById({fullName, id});

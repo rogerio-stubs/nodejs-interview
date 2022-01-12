@@ -24,7 +24,7 @@ class CreateCustomersUseCase {
         const calculateAge = dayjs(dateNow).diff(birth, "years");
 
         if(calculateAge <= 0) {
-            throw new AppError("Data de nascimento inválida!")
+            throw new AppError("Data de nascimento inválida!");
         }
         
         const customer = await this.customerRepository.create({

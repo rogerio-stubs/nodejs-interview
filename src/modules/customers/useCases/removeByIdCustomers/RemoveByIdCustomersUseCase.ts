@@ -17,16 +17,16 @@ class RemoveByIdCustomersUseCase {
     async execute(id: string): Promise<void> {
         
         if(!id) {
-            throw new AppError("É necessário informar um ID!");
+            throw new AppError("É necessário informar um ID como parâmetro!");
         }
 
         if(!validate(id)) {
-            throw new AppError("Id invalido");
+            throw new AppError("O ID informado é inválido");
         }
 
         const customerAlreadyExists = await this.customersRepository.findById(id);
         if(!customerAlreadyExists) {
-            throw new AppError("Id não foi encontrado!")
+            throw new AppError("O ID informado não foi encontrado!");
         }
 
         await this.customersRepository.removeById(id);

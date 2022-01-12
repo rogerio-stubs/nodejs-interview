@@ -13,7 +13,7 @@ class FindByNameCustomersUseCase {
     async execute(name: string): Promise<Customer[]> {
 
         if(!name) {
-            throw new AppError("É necessário informar um nome para busca");
+            throw new AppError("É necessário informar um nome para busca!");
         }
 
         const customers = await this.customersRepository.findByName(name.toLowerCase());
