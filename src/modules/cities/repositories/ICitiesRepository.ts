@@ -5,7 +5,7 @@ import { City } from "../entities/City";
 interface ICitiesRepository {
     create({name, uf}: ICreateCityDTO): Promise<void>;
     findByName(name: string): Promise<City[]>;
-    findbyUf(uf: string): Promise<City[]>;
+    findByUf(uf: string): Promise<City[]>;
     findByNameAndUf({name, uf}: ICreateCityDTO): Promise<City>;
 }
 

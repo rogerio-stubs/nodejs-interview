@@ -24,7 +24,7 @@ class CitiesRepository implements ICitiesRepository {
         return city;
     }
 
-    async findbyUf(uf: string): Promise<City[]> {
+    async findByUf(uf: string): Promise<City[]> {
         const city = await this.repository.find({ uf });
         return city;   
     }

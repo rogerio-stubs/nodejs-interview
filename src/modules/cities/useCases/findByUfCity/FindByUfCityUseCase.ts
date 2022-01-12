@@ -20,7 +20,7 @@ class FindByUfCityUseCase {
             throw new AppError("Necessário informar a UF");
         }
         
-        const cities = await this.citiesRepository.findbyUf(uf.toLowerCase());
+        const cities = await this.citiesRepository.findByUf(uf.toLowerCase());
 
         return cities;
     }
