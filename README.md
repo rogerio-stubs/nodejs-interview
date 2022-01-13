@@ -19,8 +19,9 @@
  
  
 * /customers
-  * POST ```"/customers/"```
-  * GET ```"/customers/name/"```
-  * GET ```"/customers/id/:id?"```
-  * DELETE ```"/customers/id/:id?"```
-  * PUT ```"/customers/id/:id?"```
+  * POST ```"/customers/"``` - Cadastrar cliente 
+  * GET ```"/customers/name/"``` - Consultar cliente pelo nome
+  * GET ```"/customers/id/:id?"```- Consultar cliente pelo Id
+  * DELETE ```"/customers/id/:id?"``` - Remover cliente
+  * PUT ```"/customers/id/:id?"``` - Alterar o nome do cliente
+
